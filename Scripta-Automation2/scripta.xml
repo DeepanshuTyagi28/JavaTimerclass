@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Scripta Automated Test Suite">
+
+	<!-- environment settings -->
+	<parameter name="browser" value="chrome" />
+	<parameter name="url" value="https://portal-int.scriptainsights.io/register/login" />
+	<parameter name="tableauUrl" value="https://tableau.scriptainsights.com/" />
+	<!-- for login -->
+	<parameter name="userName" value="newuserttn" />
+	<parameter name="password" value="Password9$$" />
+	<parameter name="companyName" value="prismx ai" />
+	<parameter name="firstName" value="PAUL" />
+	<parameter name="lastName" value="TRAHAN" />
+	<parameter name="memberId" value="W228219877" />
+	<parameter name="year" value="1983" />
+	<parameter name="month" value="01" />
+	<parameter name="day" value="01" />
+	<parameter name="emailContact" value="scriptatest1@scripta.com" />
+	<parameter name="userName" value="scriptaTest1" />
+	<parameter name="setPassword" value="Password9$$" />
+	<parameter name="confirmPassword" value="Password9$$" />
+	<parameter name="newPassword" value="Password9$$$" />
+	<parameter name="confirmPasswordReset" value="Password9$$$" />
+	
+	<!-- uncomment the tests to execute them -->
+	<test name="Scripta Test" preserve-order="true">
+
+		<groups>
+			<define name="smoke">
+				<include name="smokeTest" />
+			</define>
+
+
+			<define name="regression">
+				<include name="regressionTest" />
+			</define>
+			<run>
+				<include name="smoke" />
+				<include name="regression" />
+			</run>
+		</groups>
+
+		<classes>
+			
+			<!-- <class name="scripta.login.LoginTestClass" /> -->
+			<!-- <class name="scripta.pdfdownload.PdfSavingsDownload" /> -->
+			<!-- <class name="scripta.signup.SignupTestClass" /> -->
+			<!-- <class name="scripta.changepassword.ChangePasswordTestClass" /> -->
+			<class name="client.reporting.ClientAutomatedReportingCapture2" />
+			
+		</classes>
+
+	</test>
+</suite>
